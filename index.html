@@ -448,17 +448,18 @@ section.block.center{ text-align: center; }
   overflow: hidden;
   box-shadow: 8px 8px 0 var(--ink);
 }
-.founder-grid .avatar .sun-bg{
-  position: absolute;
-  top: 8%; right: 8%;
-  width: 46%; aspect-ratio: 1;
-  background: var(--sun);
-  border-radius: 50%;
+.founder-grid .avatar img{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.founder-grid .avatar .water{
-  position: absolute; left: 0; right: 0; bottom: 0;
-  height: 35%;
-  background: linear-gradient(to top, var(--sky), transparent);
+.founder-grid .avatar::after{
+  content:"";
+  position: absolute; inset: 50% 0 0 0;
+  background: linear-gradient(to top, rgba(10,28,34,.85) 0%, rgba(10,28,34,.4) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 .founder-grid .avatar .label{
   position: absolute; inset: auto 0 0 0;
@@ -890,15 +891,7 @@ footer{
 
   <div class="founder-grid" style="padding: 0 var(--gut) clamp(60px, 9vw, 120px); max-width:1300px; margin: 0 auto;">
     <div class="avatar">
-      <div class="sun-bg"></div>
-      <div class="water"></div>
-      <svg viewBox="0 0 300 340" style="position:absolute; inset:0; width:100%; height:100%;" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="150" cy="160" rx="58" ry="62" fill="#1a3741"/>
-        <path d="M70 320 Q150 230 230 320 Z" fill="#1a3741"/>
-        <rect x="106" y="148" width="34" height="14" rx="3" fill="#0a1c22"/>
-        <rect x="158" y="148" width="34" height="14" rx="3" fill="#0a1c22"/>
-        <line x1="140" y1="155" x2="158" y2="155" stroke="#0a1c22" stroke-width="3"/>
-      </svg>
+      <img src="img/tracy.jpg" alt="Tracy Smith, founder & CEO of Swell Brands" />
       <div class="label">
         <div class="name">tracy smith</div>
         <small>founder &amp; ceo</small>
