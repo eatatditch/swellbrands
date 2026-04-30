@@ -357,9 +357,33 @@ section.block.center{ text-align: center; }
   .brand-card:last-child{ border-bottom: none; }
 }
 
-.loc-block{ padding: clamp(60px, 9vw, 120px) var(--gut); }
+.loc-block{
+  padding: clamp(60px, 9vw, 120px) var(--gut);
+  background: var(--tide);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.loc-block::before{
+  content:""; position: absolute;
+  top: -10%; right: -8%;
+  width: 40%; aspect-ratio: 1;
+  background: radial-gradient(circle, var(--sun) 0%, transparent 65%);
+  opacity: .25;
+  pointer-events: none;
+}
+.loc-block::after{
+  content:""; position: absolute;
+  bottom: -20%; left: -10%;
+  width: 50%; aspect-ratio: 1;
+  background: radial-gradient(circle, var(--sky) 0%, transparent 65%);
+  opacity: .20;
+  pointer-events: none;
+}
+.loc-block > *{ position: relative; z-index: 1; }
 .loc-block h2{ color: var(--paper); }
-.loc-block .body{ color: var(--paper); }
+.loc-block .body{ color: var(--paper); max-width: 52ch; }
 .loc-block .kicker{ color: var(--sun-2); }
 
 .locs{
@@ -772,7 +796,7 @@ footer{
 </section>
 
 
-<section class="wood loc-block reveal" id="locations">
+<section class="loc-block reveal" id="locations">
   <div class="block center" style="padding: 0;">
     <div class="kicker-row">
       <span class="kicker">where you'll</span>
