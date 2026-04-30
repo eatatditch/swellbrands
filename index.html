@@ -200,9 +200,9 @@ nav.top .cta:hover{ transform: translateY(-1px); }
 
 .hero-art{
   position: relative;
-  aspect-ratio: 1 / 1.15;
+  aspect-ratio: 1.35 / 1;
   width: 100%;
-  max-width: 560px;
+  max-width: 720px;
   margin-left: auto;
   border-radius: 18px;
   overflow: hidden;
@@ -767,12 +767,35 @@ footer{
       </div>
       <div class="art">
         <svg viewBox="0 0 220 180" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 130 Q60 90 110 130 T210 130" stroke="#1d4e58" stroke-width="4" fill="none"/>
-          <path d="M10 145 Q60 105 110 145 T210 145" stroke="#6cabb6" stroke-width="3" fill="none"/>
-          <path d="M70 30 L100 30 Q110 50 130 30 L160 30 L180 60 L165 75 L155 70 L155 130 Q155 145 145 150 L85 150 Q75 145 75 130 L75 70 L65 75 L50 60 Z"
-                fill="#f8f1de" stroke="#1a3741" stroke-width="3" stroke-linejoin="round"/>
-          <text x="115" y="100" text-anchor="middle" font-family="Bagel Fat One, Impact" font-size="28" fill="#ee7a3a">swell</text>
-          <path d="M85 110 Q115 100 145 110" stroke="#1d4e58" stroke-width="2.5" fill="none"/>
+          <defs>
+            <linearGradient id="teeGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fffef5"/>
+              <stop offset="100%" stop-color="#e8dfcc"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="110" cy="170" rx="68" ry="5" fill="#000" opacity="0.18"/>
+          <path d="M75 25 L92 18 Q105 32 110 32 Q115 32 128 18 L145 25 L175 45 L160 65 L150 60 L150 158 Q150 166 142 168 L78 168 Q70 166 70 158 L70 60 L60 65 L45 45 Z"
+                fill="url(#teeGrad)" stroke="#1a3741" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M92 18 Q105 32 110 32 Q115 32 128 18" fill="none" stroke="#1a3741" stroke-width="2"/>
+          <path d="M96 24 Q108 34 110 34 Q112 34 124 24" fill="none" stroke="#1a3741" stroke-width="0.8" opacity="0.5"/>
+          <line x1="70" y1="158" x2="150" y2="158" stroke="#1a3741" stroke-width="0.8" opacity="0.4" stroke-dasharray="3 4"/>
+          <path d="M82 162 Q86 166 90 162" stroke="#1a3741" stroke-width="0.8" fill="none" opacity="0.3"/>
+          <path d="M130 162 Q134 166 138 162" stroke="#1a3741" stroke-width="0.8" fill="none" opacity="0.3"/>
+          <path d="M78 50 Q75 70 80 90" stroke="#1a3741" stroke-width="0.8" fill="none" opacity="0.3"/>
+          <path d="M142 50 Q145 70 140 90" stroke="#1a3741" stroke-width="0.8" fill="none" opacity="0.3"/>
+          <g transform="translate(110 100)">
+            <circle cx="0" cy="0" r="13" fill="#ee7a3a"/>
+            <g stroke="#ee7a3a" stroke-width="2" stroke-linecap="round">
+              <line x1="0" y1="-19" x2="0" y2="-23"/>
+              <line x1="11" y1="-13" x2="14" y2="-16"/>
+              <line x1="-11" y1="-13" x2="-14" y2="-16"/>
+              <line x1="15" y1="0" x2="19" y2="0"/>
+              <line x1="-15" y1="0" x2="-19" y2="0"/>
+            </g>
+            <text x="0" y="22" text-anchor="middle" font-family="Bagel Fat One, Impact" font-size="14" fill="#1a3741">swell</text>
+            <path d="M-22 32 Q-14 28 -7 32 T7 32 T22 32" stroke="#1d4e58" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M-22 38 Q-14 34 -7 38 T7 38 T22 38" stroke="#6cabb6" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+          </g>
         </svg>
       </div>
       <div class="name">swell <span class="pop">surf</span> co.</div>
