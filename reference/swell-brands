@@ -121,28 +121,28 @@ a{ color:inherit; text-decoration:none; }
 }
 .btn-ghost:hover{ background: var(--paper); color: var(--ink); }
 
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top){
+nav.top{
   position: sticky; top: 0; z-index: 50;
   display: flex; justify-content: space-between; align-items: center;
   padding: 14px var(--gut);
   background: var(--paper);
   border-bottom: 2px solid var(--ink);
 }
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) .wordmark{
+nav.top .wordmark{
   font-family: var(--display);
   font-size: 28px;
   text-transform: lowercase;
   display: inline-flex; align-items: baseline; gap: 2px;
 }
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) .wordmark .dot{ color: var(--sun); }
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) ul{ list-style:none; display:flex; gap:22px; margin:0; padding:0; }
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) ul a{
+nav.top .wordmark .dot{ color: var(--sun); }
+nav.top ul{ list-style:none; display:flex; gap:22px; margin:0; padding:0; }
+nav.top ul a{
   font-family: var(--body); font-weight: 500;
   font-size: 14px; text-transform: lowercase;
   padding: 4px 0;
 }
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) ul a:hover{ color: var(--sun); }
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) .cta{
+nav.top ul a:hover{ color: var(--sun); }
+nav.top .cta{
   background: var(--sun); color: var(--paper);
   padding: 8px 18px;
   font-family: var(--display);
@@ -152,8 +152,8 @@ a{ color:inherit; text-decoration:none; }
   box-shadow: 0 3px 0 var(--sun-2);
   transition: transform .2s ease;
 }
-[[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) .cta:hover{ transform: translateY(-1px); }
-@media (max-width: 880px){ [[[nav.top](http://nav.top)](http://nav.top)](http://nav.top) ul{ display:none; } }
+nav.top .cta:hover{ transform: translateY(-1px); }
+@media (max-width: 880px){ nav.top ul{ display:none; } }
 
 .hero{
   position: relative;
@@ -258,7 +258,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 section.block{ padding: clamp(60px, 9vw, 130px) var(--gut); position: relative; }
-[[[section.block.center](http://section.block.center)](http://section.block.center)](http://section.block.center){ text-align: center; }
+section.block.center{ text-align: center; }
 .block .kicker-row{ display:flex; flex-direction:column; align-items:center; gap:4px; margin-bottom:20px; }
 .block.left .kicker-row{ align-items: flex-start; }
 .block h2{
@@ -535,7 +535,7 @@ section.block{ padding: clamp(60px, 9vw, 130px) var(--gut); position: relative; 
   text-transform: lowercase;
   margin-bottom: 14px;
 }
-.brew .[[[tag.live](http://tag.live)](http://tag.live)](http://tag.live){ background: var(--hibiscus); }
+.brew .tag.live{ background: var(--hibiscus); }
 .brew .tag.soon{ background: var(--sun); }
 .brew h3{
   font-family: var(--display);
@@ -646,7 +646,7 @@ footer{
 }
 
 .reveal{ opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
-.[[[reveal.in](http://reveal.in)](http://reveal.in)](http://reveal.in){ opacity: 1; transform: none; }
+.reveal.in{ opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1; transform:none; transition:none; }
   .ticker-track{ animation: none; }
@@ -1074,7 +1074,7 @@ footer{
 
   async function handleSubscribe(e){
     e.preventDefault();
-    const form   = [[[e.target](http://e.target)](http://e.target)](http://e.target);
+    const form   = e.target;
     const input  = form.querySelector('input');
     const button = form.querySelector('button');
     const email  = input.value.trim().toLowerCase();
@@ -1095,7 +1095,7 @@ footer{
 
     const { error } = await sb
       .from('subscribers')
-      .insert([{ email, source: '[[[swellbrands.co](http://swellbrands.co)](http://swellbrands.co)](http://swellbrands.co)' }]);
+      .insert([{ email, source: 'swellbrands.co' }]);
 
     // duplicate emails return an error — treat that as success
     const isDup = error && /duplicate|unique/i.test(error.message);
@@ -1121,8 +1121,8 @@ footer{
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting){
-        [[[e.target](http://e.target)](http://e.target)](http://e.target).classList.add('in');
-        io.unobserve([[[e.target](http://e.target)](http://e.target)](http://e.target));
+        e.target.classList.add('in');
+        io.unobserve(e.target);
       }
     });
   }, { threshold: 0.10 });
