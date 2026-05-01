@@ -255,7 +255,7 @@ nav.top .cta:hover{ transform: translateY(-1px); }
 
 section.block{ padding: clamp(60px, 9vw, 130px) var(--gut); position: relative; }
 section.block.center{ text-align: center; }
-.block .kicker-row{ display:flex; flex-direction:column; align-items:center; gap:0; margin-bottom:0; }
+.block .kicker-row{ display:flex; flex-direction:column; align-items:center; gap:0; margin-bottom:8px; }
 .block.left .kicker-row{ align-items: flex-start; }
 .block h2{
   font-family: var(--display);
@@ -276,6 +276,7 @@ section.block.center{ text-align: center; }
 
 .brands-wrap{
   background: var(--paper);
+  padding: clamp(60px, 9vw, 120px) 0 0;
   border-top: 2px solid var(--ink);
   border-bottom: 2px solid var(--ink);
 }
@@ -523,10 +524,11 @@ section.block.center{ text-align: center; }
   font-family: var(--script);
   font-size: 56px;
   color: var(--ink);
-  line-height: 1;
-  display: inline-block;
+  line-height: 0.9;
+  display: block;
   transform: rotate(-3deg);
-  margin-bottom: 8px;
+  transform-origin: left center;
+  margin-bottom: 24px;
 }
 .founder-grid .sigmeta{
   font-size: 13px; font-weight: 500; color: var(--tide);
